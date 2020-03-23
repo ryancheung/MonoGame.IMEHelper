@@ -1,0 +1,20 @@
+<Project>
+
+  <PropertyGroup>
+    <ProjectPlatform>Common</ProjectPlatform>
+    <BaseOutputPath>..\Artifacts\$(ProjectPlatform)</BaseOutputPath>
+    <OutputPath>..\Artifacts\$(ProjectPlatform)</OutputPath>
+    <RootNamespace>MonoGame.IMEHelper</RootNamespace>
+    <AssemblyName>MonoGame.IMEHelper.Common</AssemblyName>
+    <LangVersion>5</LangVersion>
+
+    <PackageId>MonoGame.IMEHelper.Common</PackageId>
+    <Description>This is an netstandard package with no platform implementation.</Description>
+    <PackageTags>monogame;netstandard2.0;</PackageTags>
+    <PackageProjectUrl>https://github.com/ryancheung/MonoGame.IMEHelper</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/ryancheung/MonoGame.IMEHelper</RepositoryUrl>
+    <Authors>ryancheung</Authors>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+  </PropertyGroup>
+
+</Project>
