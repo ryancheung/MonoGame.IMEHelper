@@ -95,6 +95,7 @@ namespace MonoGame.IMEHelper.DesktopGL.Test
             whitePixel = new Texture2D(GraphicsDevice, 1, 1);
             whitePixel.SetData<Color>(new Color[] { Color.White });
         }
+        bool F1Pressed;
 
         /// <summary>
         /// Allows the game to run logic such as updating the world,
@@ -108,12 +109,17 @@ namespace MonoGame.IMEHelper.DesktopGL.Test
 
             KeyboardState ks = Keyboard.GetState();
 
-            if (ks.IsKeyDown(Keys.F1))
+            if (ks.IsKeyDown(Keys.F1) && !F1Pressed)
             {
+                F1Pressed = true;
                 if (imeHandler.Enabled)
                     imeHandler.StopTextComposition();
                 else
                     imeHandler.StartTextComposition();
+            }
+            if (ks.IsKeyUp(Keys.F1) && F1Pressed)
+            {
+                F1Pressed = false;
             }
 
             base.Update(gameTime);
