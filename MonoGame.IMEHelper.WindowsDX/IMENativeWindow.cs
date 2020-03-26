@@ -28,6 +28,8 @@ namespace MonoGame.IMEHelper
         /// </summary>
         public bool IsEnabled { get; private set; }
 
+        public bool IsIMEOpen { get; private set; }
+
         /// <summary>
         /// Composition String
         /// </summary>
@@ -278,6 +280,11 @@ namespace MonoGame.IMEHelper
         {
             switch (WParam)
             {
+                case IMM.ImnSetOpenStatus:
+                    _context = IMM.ImmGetContext(Handle);
+                    IsIMEOpen = IMM.ImmGetOpenStatus(_context);
+                    System.Diagnostics.Trace.WriteLine(string.Format("IsIMEOpen: {0}", IsIMEOpen ? "True" : "False"));
+                    break;
                 case IMM.ImnOpenCandidate:
                 case IMM.ImnChangeCandidate:
                     IMEChangeCandidate();

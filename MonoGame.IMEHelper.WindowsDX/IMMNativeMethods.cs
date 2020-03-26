@@ -74,6 +74,9 @@ namespace MonoGame.IMEHelper
         [DllImport("imm32.dll", SetLastError = true)]
         public static extern IntPtr ImmGetContext(IntPtr hWnd);
 
+        [DllImport("imm32.dll", SetLastError = true)]
+        public static extern bool ImmGetOpenStatus(IntPtr hIMC);
+
         [DllImport("user32.dll", CallingConvention = CallingConvention.StdCall, CharSet = CharSet.Auto)]
         public static extern bool TranslateMessage(IntPtr message);
 
